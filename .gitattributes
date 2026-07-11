@@ -1,0 +1,12 @@
+* text=auto
+*.md text eol=lf
+*.exe binary
+*.dll binary
+*.so binary
+*.dat binary
+*.bin binary
+*.png binary
+*.ttf binary
+*.otf binary
+*.frag binary
+*.Z binary
