@@ -1,98 +1,130 @@
 <div align="center">
-  <img src="assets/eclipxse_music_hero.png" alt="Eclipxse Music gothic angel artwork" width="100%">
+  <img src="assets/eclipxse_music_hero.png" alt="Eclipxse Music artwork" width="100%">
 
-  <h1>Eclipxse Music for Windows</h1>
-  <p><strong>A smooth personal music client with a gothic angelic identity.</strong></p>
+  <br>
+  <sub>THE WINDOWS ARCHIVE // RELEASE 10.2.0</sub>
+  <h1>Eclipxse Music</h1>
+  <p>A focused desktop music client for Windows.</p>
 
   <p>
-    <a href="https://github.com/Eclipxse/Eclipxse_music_exe/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/Eclipxse/Eclipxse_music_exe?style=flat-square&color=9CC4FF"></a>
-    <img alt="Windows x64" src="https://img.shields.io/badge/Windows-x64-0078D4?style=flat-square&logo=windows11&logoColor=white">
-    <img alt="Flutter" src="https://img.shields.io/badge/Flutter-3.44.5-02569B?style=flat-square&logo=flutter&logoColor=white">
-    <a href="LICENSE"><img alt="GPL v3 license" src="https://img.shields.io/badge/license-GPLv3-4C8CBF?style=flat-square"></a>
+    <a href="https://github.com/Eclipxse/Eclipxse_music_exe/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/Eclipxse/Eclipxse_music_exe?style=flat-square&label=release&color=18181b"></a>
+    <img alt="Windows x64" src="https://img.shields.io/badge/Windows-x64-27272a?style=flat-square&logo=windows11&logoColor=white">
+    <img alt="Flutter 3.44.5" src="https://img.shields.io/badge/Flutter-3.44.5-27272a?style=flat-square&logo=flutter&logoColor=white">
+    <img alt="MediaKit and libmpv" src="https://img.shields.io/badge/audio-MediaKit%20%2F%20libmpv-7f1d1d?style=flat-square">
+    <a href="LICENSE"><img alt="GPL v3" src="https://img.shields.io/badge/license-GPLv3-18181b?style=flat-square"></a>
   </p>
 
   <p>
-    <a href="https://github.com/Eclipxse/Eclipxse_music_exe/releases/latest"><strong>Download Eclipxse Music 10.2.0</strong></a>
+    <a href="#download">Download</a>&nbsp;&nbsp;/&nbsp;&nbsp;
+    <a href="#desktop-system">Desktop system</a>&nbsp;&nbsp;/&nbsp;&nbsp;
+    <a href="#controls">Controls</a>&nbsp;&nbsp;/&nbsp;&nbsp;
+    <a href="#diagnostics">Diagnostics</a>
   </p>
 </div>
 
+---
+
+Eclipxse Music is a personal Windows build of the open-source Musify client. It pairs a quiet desktop workflow with a custom visual identity, resilient streaming, local audio support, and native Windows controls.
+
+This repository contains the ready-to-run Windows x64 distribution. The corresponding source archive is attached to every release.
+
 ## Download
 
-Open the [latest release](https://github.com/Eclipxse/Eclipxse_music_exe/releases/latest) and choose one package:
+<table>
+  <tr>
+    <td width="50%">
+      <strong>Windows installer</strong><br>
+      Recommended for regular use.<br><br>
+      Per-user installation, Start menu entry, clean uninstall, and support for automatic upgrades.<br><br>
+      <a href="https://github.com/Eclipxse/Eclipxse_music_exe/releases/download/v10.2.0/Eclipxse-Music-Setup-10.2.0.exe"><strong>Download setup</strong></a>
+    </td>
+    <td width="50%">
+      <strong>Portable archive</strong><br>
+      No installation required.<br><br>
+      Extract the complete ZIP and keep the executable, DLL files, and <code>data</code> directory together.<br><br>
+      <a href="https://github.com/Eclipxse/Eclipxse_music_exe/releases/download/v10.2.0/Eclipxse-Music-Windows-x64-10.2.0.zip"><strong>Download portable ZIP</strong></a>
+    </td>
+  </tr>
+</table>
 
-| Package | Best for |
-| --- | --- |
-| `Eclipxse-Music-Setup-10.2.0.exe` | Recommended. Installs per-user, adds Start menu and uninstall entries, and supports automatic upgrades. |
-| `Eclipxse-Music-Windows-x64-10.2.0.zip` | Portable use. Extract the complete archive and keep every file together. |
+> [!NOTE]
+> The application is not code-signed. Microsoft Defender SmartScreen may display a warning on first launch. Verify the published SHA-256 checksum before choosing **More info > Run anyway**.
 
-The app is not code-signed, so Microsoft Defender SmartScreen may show **Windows protected your PC**. Verify the SHA-256 checksum, choose **More info**, and then choose **Run anyway**.
+## Desktop System
 
-## What Is New In 10.2
+| Playback | Windows integration | Library |
+| --- | --- | --- |
+| MediaKit and libmpv backend | Compact always-on-top player | Search and discovery |
+| Fresh stream resolution | System tray controls | Favorites and playlists |
+| Alternate-codec recovery | Hardware media keys | Queue and listening history |
+| Eight-band equalizer | Close or minimize to tray | Lyrics and listening recap |
+| Output-device selection | Optional launch at startup | Validated offline downloads |
+| Loudness normalization | Optional Discord presence | Local audio files |
 
-- Rebuilt Windows playback path with fresh stream resolution and automatic alternate-codec recovery
-- Native MediaKit/libmpv output-device selection, eight-band equalizer, presets, and loudness normalization
-- Playback watchdog and visible retry state instead of an endless loading spinner
-- Compact always-on-top mini player with smooth track transitions
-- System tray controls, close/minimize-to-tray settings, saved window bounds, and optional startup launch
-- Native global play/pause, previous, and next hardware media keys
-- Drag-and-drop and file-picker support for local audio
-- Right-click song actions and desktop keyboard shortcuts
-- Optional Discord Rich Presence
-- Windows diagnostics, persistent logs, output inspection, and offline-library repair
-- GitHub release updater with installer handoff
+### Playback Reliability
 
-## Core Features
+The Windows playback path resolves a fresh audio stream for each session, prefers AAC where available, and retries with an alternate Opus stream when startup stalls. A playback watchdog exposes a clear retry action instead of leaving the player in an indefinite loading state.
 
-- Online catalogue browsing and search suggestions
-- Queue, shuffle, repeat, favorites, playlists, and listening history
-- Lyrics, sleep timer, playback speed, and listening recaps
-- Offline downloads with partial-file validation
-- Custom Eclipxse artwork, application icon, and dark visual identity
-- Background playback through MediaKit and libmpv
+Offline downloads are written to temporary partial files, validated, and moved into the library only after completion.
 
-## Desktop Shortcuts
+### Local Audio
+
+Drop audio files anywhere on the app or use the file picker. Supported formats:
+
+```text
+AAC  FLAC  M4A  MP3  OGG  OPUS  WAV  WEBM
+```
+
+## Controls
 
 | Action | Shortcut |
 | --- | --- |
 | Open local music | `Ctrl+O` |
-| Toggle mini player | `Ctrl+Shift+M` |
+| Toggle compact player | `Ctrl+Shift+M` |
 | Play or pause | `Ctrl+Space` |
 | Previous track | `Ctrl+Alt+Left` |
 | Next track | `Ctrl+Alt+Right` |
 
-Hardware media keys can be enabled or disabled under **Settings > Windows desktop**.
+Songs also expose their full action menu on right-click. Global hardware media keys can be enabled or disabled under **Settings > Windows desktop**.
 
-## Portable Package
+## Audio Tools
 
-1. Download `Eclipxse-Music-Windows-x64-10.2.0.zip`.
-2. Extract the whole archive to a normal folder.
-3. Run `Eclipxse Music.exe`.
+Open **Settings > Audio > Windows audio** to access:
 
-> [!IMPORTANT]
-> The EXE is not standalone. Keep `Eclipxse Music.exe`, every DLL, and the `data` directory together.
+- Playback-device selection and refresh
+- Eight independently adjustable frequency bands
+- Flat, Bass, Vocal, Air, and Night presets
+- Loudness normalization through native libmpv filters
+- Configurable smooth track transitions
 
-No Flutter SDK or Visual Studio installation is required to run a packaged release.
+## Diagnostics
 
-## Build Information
+Open **Settings > Windows desktop > Diagnostics** to inspect the active track, processing state, timing, buffer, output device, and latest playback issue.
 
-| Item | Value |
+The diagnostics view can retry playback, refresh output devices, repair incomplete offline entries, copy a system report, and open or clear the persistent log.
+
+```text
+%LOCALAPPDATA%\Eclipxse Music\playback.log
+```
+
+## Release Record
+
+| Field | Value |
 | --- | --- |
-| App version | `10.2.0+187` |
-| Target | Windows 10/11 x64 |
-| Flutter | `3.44.5` stable |
-| Audio backend | MediaKit / libmpv |
-| Installer | Inno Setup 6.7.3, per-user |
-| Tested | Clean build, portable launch, installer launch, and uninstall on Windows 11 |
+| Application | `Eclipxse Music 10.2.0+187` |
+| Platform | `Windows 10/11 x64` |
+| Flutter | `3.44.5 stable` |
+| Audio engine | `MediaKit / libmpv` |
+| Installer | `Inno Setup 6.7.3` |
+| Validation | Clean build, portable launch, install, launch, uninstall |
 
-## Verify Downloads
+### SHA-256
 
 ```text
 F60ADA9CD4D7DF95BE0D935378F7D81A6F2DD611C8FF9E7D731DE0B08739742D  Eclipxse-Music-Setup-10.2.0.exe
 2930769B815E959AEFC7ED39E03867128865D9FC286774E3914E00AD0126BC14  Eclipxse-Music-Windows-x64-10.2.0.zip
 1F81AF773D46A4361C1340477FD85C6E10768446D3E08D528D5D539000CB4C84  Eclipxse-Music-Source-10.2.0.zip
 ```
-
-Verify a file in PowerShell:
 
 ```powershell
 Get-FileHash ".\Eclipxse-Music-Setup-10.2.0.exe" -Algorithm SHA256
@@ -112,41 +144,20 @@ window_manager_plugin.dll
 data/
 ```
 
-The `data` directory contains the compiled Dart application, artwork, fonts, shaders, and third-party notices required at runtime.
+The executable is not standalone. The `data` directory and bundled DLL files are required at runtime.
 
-## Troubleshooting
+## Source And License
 
-### A song keeps loading
+Eclipxse Music is a modified build of [gokadzev/Musify](https://github.com/gokadzev/Musify), created by Valeri Gokadze and its contributors. The customized development repository is maintained at `Eclipxse/Eclipxse_music`, and a corresponding source ZIP is included with each public binary release.
 
-Open **Settings > Windows desktop > Diagnostics**, then use **Retry playback** or **Repair offline library**. Confirm that the computer is online and that a firewall is not blocking the application.
+The project remains free software under the [GNU General Public License v3.0](LICENSE). Flutter and package-specific notices are bundled at `data/flutter_assets/NOTICES.Z`.
 
-Persistent playback logs are stored at:
-
-```text
-%LOCALAPPDATA%\Eclipxse Music\playback.log
-```
-
-### A DLL is missing
-
-For the portable build, extract the entire ZIP again. Do not launch the EXE from inside the archive preview or move only the EXE to the desktop.
-
-### Playback uses the wrong speakers
-
-Open **Settings > Audio > Windows audio**, refresh devices, and select the intended output.
-
-## Source, Credits, And License
-
-Eclipxse Music is a modified build of [gokadzev/Musify](https://github.com/gokadzev/Musify), created by Valeri Gokadze and its contributors. The customized development repository is maintained at `Eclipxse/Eclipxse_music`; each binary release also includes its corresponding source archive.
-
-The project remains free software under the [GNU General Public License v3.0](LICENSE). Third-party notices bundled by Flutter are available at `data/flutter_assets/NOTICES.Z`.
-
-## Disclaimer
-
-Eclipxse Music does not host or own third-party music. Search results, metadata, artwork, and audio availability depend on external services, local files, network conditions, and regional access. Users are responsible for complying with applicable law and service terms.
+The application does not host or own third-party music. Availability depends on external services, local files, network conditions, and regional access. Users are responsible for complying with applicable law and service terms.
 
 ---
 
 <div align="center">
-  <img src="assets/eclipxse_music_emblem.png" alt="Eclipxse Music emblem" width="220">
-  <p><strong>Eclipxse Music</strong><br>Windows archive 10.2.0</p>
+  <img src="assets/eclipxse_music_emblem.png" alt="Eclipxse Music emblem" width="190">
+  <br>
+  <sub>ECLIPXSE MUSIC // WINDOWS ARCHIVE 10.2.0</sub>
 </div>
